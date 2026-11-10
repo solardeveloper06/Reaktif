@@ -20,7 +20,7 @@ def index():
         ind_ratio = 0
         cap_ratio = 0
 
-      # Standart Ticarethane/Sanayi Sınırları (%20 Endüktif, %15 Kapasitif)
+      # Sınır değerler (%20 Endüktif, %15 Kapasitif)
       ind_penalty = ind_ratio > 20
       cap_penalty = cap_ratio > 15
 
@@ -35,7 +35,7 @@ def index():
           'has_penalty': ind_penalty or cap_penalty,
       }
     except ValueError:
-      result = {'error': 'Lütfen geçerli sayısal değerler giriniz.'}
+      result = {'error': 'Lütfen tüm alanlara geçerli sayısal değerler giriniz.'}
 
   return render_template('index.html', result=result)
 
